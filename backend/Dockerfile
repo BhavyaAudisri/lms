@@ -1,7 +1,7 @@
 FROM node:22-slim
 WORKDIR /app
-COPY . .
-
+COPY api/package*.json ./
+COPY api/ .
 RUN npm install
 
 RUN npm uninstall prisma @prisma/client
