@@ -1,7 +1,7 @@
 FROM node:16
 CMD ["npm", "start"]
 WORKDIR /home/ec2-user/lms-nodejs
-COPY /lms-nodejs /mnt/lms/api
+COPY /home/ec2-user/lms-nodejs /home/ec2-user/lms/
 RUN npm install
 RUN npm uninstall prisma @prisma/client
 RUN npm install prisma@5 @prisma/client@5
