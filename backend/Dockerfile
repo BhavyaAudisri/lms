@@ -1,5 +1,6 @@
 FROM node:22-slim
-WORKDIR /home/ec2-user/lms/backend/api
+WORKDIR /app
+COPY . .
 
 RUN npm install
 
