@@ -1,8 +1,4 @@
-FROM node:16
-
-WORKDIR /home/ec2-user/lms
-
-COPY lms-nodejs/ /home/ec2-user/lms/
+FROM node:22-slim
 
 RUN npm install
 
