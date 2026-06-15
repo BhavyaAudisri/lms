@@ -120,7 +120,7 @@ dist
 
 # typescript build
 build/
-.env*
+#.env*
 .flaskenv*
 !.env.project
 !.env.vault
