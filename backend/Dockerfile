@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:22
 RUN useradd -m appuser
 WORKDIR /app
 COPY api/package*.json ./
