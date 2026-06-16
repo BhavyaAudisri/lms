@@ -9,6 +9,7 @@ COPY webapp/ ./
 RUN npm run build
 
 FROM nginx:1.28-bookworm
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 RUN rm -rf /usr/share/nginx/html/*
 
