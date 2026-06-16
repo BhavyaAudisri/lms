@@ -2,14 +2,15 @@ FROM node:22
 RUN useradd -m appuser
 WORKDIR /app
 COPY api/package*.json ./
+RUN npm install
 COPY api/ .
 RUN npm uninstall prisma @prisma/client
 RUN npm install prisma@5 @prisma/client@5 
 RUN npx prisma generate
-CMD ["sh", "-c", "npx prisma db push && npm start"]
+
 RUN npm run build
 RUN chown -R appuser:appuser /app
 USER appuser
 
 EXPOSE 8080
-CMD ["node", "build/index.js"]
+CMD ["sh", "-c", "npx prisma migrate deploy && node build/index.js"]
